@@ -29,3 +29,15 @@ pytest tests/test_sim_update.py
 ## Deployment
 
 Deploy the repo to Vercel (either via the Vercel CLI or GitHub integration). Vercel will use `vercel.json` to run `api/index.py` on Python 3.11 and expose `/sim-update` at the project root.
+
+## Live check
+
+```bash
+curl -X POST https://lilygo-webhook-server-4wo7.vercel.app/sim-update \
+  -H 'Content-Type: application/json' \
+  -d '{"test": "ping"}'
+```
+
+```
+{"status":"ok"}
+```
